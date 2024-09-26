@@ -43,15 +43,16 @@ public class C06_Attributes {
         System.out.println("Test 05");
     }
 
-    @Test(timeOut = 2000)
+    @Test(timeOut = 2000,  groups = "A")
     void test06() throws InterruptedException {
         Thread.sleep(1000);//ThreadTimeoutException
         System.out.println("Test 06");
     }
 
-    @Test(invocationCount = 10)
+    @Test(invocationCount = 10, groups = "B")
     void test07() {
         System.out.println("Test 07");
+        System.out.println("B");
     }
 
     @DataProvider(name = "data")
@@ -66,14 +67,16 @@ public class C06_Attributes {
         System.out.println();
     }
 
-    @Test(expectedExceptions = {ArithmeticException.class})
+    @Test(expectedExceptions = {ArithmeticException.class}, groups = "C")
     void test09() {
+        System.out.println("C");
         System.out.println("Test 09");
         int x = 1/0;
     }
 
-    @Test(expectedExceptions = {NullPointerException.class})
+    @Test(expectedExceptions = {NullPointerException.class}, groups = "D")
     void test10() {
+        System.out.println("D");
         System.out.println("Test 10");
         String str = null;
         System.out.println(str.substring(0));

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C03_GetDriver">
+        <classes>
+            <class name="tests.C03_GetDriver"></class>
+            <class name="tests.C04_ConfigReader"></class>
+        </classes>
+    </test>
+</suite>

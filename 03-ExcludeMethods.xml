@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C06_Attributes.java">
+        <classes>
+            <class name="tests.C06_Attributes">
+                <methods>
+                    <exclude name="test05"></exclude>
+                    <exclude name="test07"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

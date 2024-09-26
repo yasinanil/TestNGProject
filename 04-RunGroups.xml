@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Test">
+    <test verbose="2" preserve-order="true" name="Group Run">
+        <groups>
+            <run>
+                <include name="A"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.C06_Attributes"></class>
+        </classes>
+    </test>
+</suite>
