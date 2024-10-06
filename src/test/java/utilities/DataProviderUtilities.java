@@ -34,4 +34,13 @@ public class DataProviderUtilities {
 
     }
 
+    @DataProvider(name = "excelDataEmployees")
+    public Object[][] getDataFromExcelEmployees() {
+
+        ExcelUtilities excelUtilities = new ExcelUtilities("Users.xlsx", "Employees");
+
+        return excelUtilities.getExcelDataAsArray();
+
+    }
+
 }

@@ -3,6 +3,7 @@ package utilities;
 import org.testng.*;
 import org.testng.annotations.ITestAnnotation;
 
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
@@ -38,6 +39,14 @@ public class MyTestListener implements ITestListener, IRetryAnalyzer, IAnnotatio
     public void onFinish(ITestContext context) {
         System.out.println("Test finished: " + context.getEndDate());
         Driver.closeDriver();
+
+        try {
+            new ProcessBuilder().command("cmd.exe", "/c", "allure serve").start(); //Windows
+            //new ProcessBuilder().command("bash", "-c", "allure serve").start(); //MAC
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     // Automatically retries failed test cases.
